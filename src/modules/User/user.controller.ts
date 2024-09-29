@@ -14,7 +14,7 @@ const createUser = catchAsync(async (req: Request, res: Response) => {
 
   sendResponse(res, {
     success: true,
-    statusCode: httpStatus.CREATED,
+    statusCode: httpStatus.OK,
     message: 'user create succefully',
     data,
   });
@@ -24,7 +24,7 @@ const getAllUsers = catchAsync(async (req: Request, res: Response) => {
 
   sendResponse(res, {
     success: true,
-    statusCode: httpStatus.CREATED,
+    statusCode: httpStatus.OK,
     message: 'user retrived succefully',
     data,
   });
@@ -36,7 +36,7 @@ const getSingleUser = catchAsync(async (req: Request, res: Response) => {
 
   sendResponse(res, {
     success: true,
-    statusCode: httpStatus.CREATED,
+    statusCode: httpStatus.OK,
     message: 'user retrived succefully',
     data,
   });
@@ -48,7 +48,7 @@ const updateUser = catchAsync(async (req: Request, res: Response) => {
 
   sendResponse(res, {
     success: true,
-    statusCode: httpStatus.CREATED,
+    statusCode: httpStatus.OK,
     message: 'user updated succefully',
     data,
   });

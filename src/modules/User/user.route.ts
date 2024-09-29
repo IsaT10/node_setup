@@ -7,10 +7,11 @@ import {
 } from './user.controller';
 import validateRequest from '../../middleware/validateRequest';
 import { createUserValidationSchema } from './user.validation';
+import { auth } from '../../middleware/auth';
 
 const router = Router();
 
-router.get('/', getAllUsers);
+router.get('/', auth('admin'), getAllUsers);
 router.post('/', validateRequest(createUserValidationSchema), createUser);
 
 router.patch('/:id', updateUser);

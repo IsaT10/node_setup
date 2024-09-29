@@ -1,9 +1,9 @@
 import express, { Application, Request, Response } from 'express';
 import cors from 'cors';
 import cookieParser from 'cookie-parser';
-import { notFoundRoute } from './error/noFoundRoute';
 import router from './routes';
 import globalErrorHandler from './middleware/globalErrorHandler';
+import { notFoundRoute } from './error/noFoundRoute';
 const app: Application = express();
 
 app.use(express.json());
@@ -20,7 +20,7 @@ app.get('/test', (req: Request, res: Response) => {
 });
 
 // api routes
-app.use('/api', router);
+app.use('/api/v1', router);
 
 // not found route
 app.all('*', notFoundRoute);

@@ -1,9 +1,9 @@
 import { ErrorRequestHandler } from 'express';
-import handelZodError from '../error/handleZodError';
-import handleValidationError from '../error/handleValidationError';
-import handleCastError from '../error/handelCastError';
-import handleDuplicateError from '../error/handleDuplicate';
 import config from '../config';
+import handleValidationError from '../error/handleValidationError';
+import handelZodError from '../error/handleZodError';
+import handleDuplicateError from '../error/handleDuplicate';
+import handleCastError from '../error/handelCastError';
 
 const globalErrorHandler: ErrorRequestHandler = (err, req, res, next) => {
   err.statusCode = err.statusCode || 500;

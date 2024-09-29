@@ -17,6 +17,10 @@ const createUserValidationSchema = z.object({
       .string({ required_error: 'Password is required' })
       .min(8, 'Password can not be less than 8 character'),
 
+    passwordChangeAt: z
+      .string({ required_error: 'Password is required' })
+      .optional(),
+
     role: z.string({ required_error: 'Role is required' }),
   }),
 });

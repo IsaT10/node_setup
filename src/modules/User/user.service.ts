@@ -19,8 +19,12 @@ const getAllUsersFromDB = async (query: Record<string, unknown>) => {
     .filter();
 
   const result = await userQuery.queryModel;
+  const meta = await userQuery.countTotal();
 
-  return result;
+  return {
+    meta,
+    result,
+  };
 };
 
 const getSingleUserFromDB = async (id: string) => {
